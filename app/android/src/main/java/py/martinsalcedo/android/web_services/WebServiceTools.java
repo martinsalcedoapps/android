@@ -1,4 +1,4 @@
-package web_services;
+package py.martinsalcedo.android.web_services;
 
 import android.content.Context;
 import android.util.Log;
