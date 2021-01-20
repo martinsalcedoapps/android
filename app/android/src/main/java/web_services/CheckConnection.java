@@ -13,6 +13,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import common_tools.Constants;
+import py.martinsalcedo.android.R;
 
 
 public class CheckConnection extends AsyncTask<String, Integer, JSONObject> {

@@ -17,9 +17,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-import py.martinsalcedo.mypersonalinformation.CommonTools.Constants;
-import py.martinsalcedo.mypersonalinformation.CommonTools.GlobalTools;
-import py.martinsalcedo.mypersonalinformation.R;
+import common_tools.Constants;
+import common_tools.GlobalTools;
+import py.martinsalcedo.android.R;
 
 class WebServiceTools {
     private String host;

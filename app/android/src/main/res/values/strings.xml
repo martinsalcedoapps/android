@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="OK">OK</string>
+    <string name="InternalError">Internal Error</string>
+    <string name="Confirmation">Confirmation</string>
+    <string name="ThereIsNewUpdate">There is a New Update</string>
+    <string name="UpdateNow">Update Now</string>
+    <string name="Later">Later</string>
+</resources>

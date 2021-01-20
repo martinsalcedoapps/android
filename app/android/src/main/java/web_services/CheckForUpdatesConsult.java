@@ -8,15 +8,16 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
+import com.google.firebase.components.BuildConfig;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import py.martinsalcedo.mypersonalinformation.BuildConfig;
-import py.martinsalcedo.mypersonalinformation.CommonTools.Constants;
-import py.martinsalcedo.mypersonalinformation.R;
-import py.martinsalcedo.mypersonalinformation.UpdateAlertDialog;
+import common_tools.Constants;
+import common_tools.UpdateAlertDialog;
+import py.martinsalcedo.android.R;
 
 public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObject> {
     private static RelativeLayout curLayout;

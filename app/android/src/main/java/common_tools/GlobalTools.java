@@ -15,12 +15,13 @@ import android.widget.RelativeLayout;
 import androidx.appcompat.app.AlertDialog;
 
 import com.google.firebase.analytics.FirebaseAnalytics;
+import com.google.firebase.components.BuildConfig;
 
 import java.util.Locale;
 
-import py.martinsalcedo.mypersonalinformation.BuildConfig;
-import py.martinsalcedo.mypersonalinformation.R;
-import py.martinsalcedo.mypersonalinformation.WebServices.CheckForUpdatesConsult;
+import py.martinsalcedo.android.R;
+import web_services.CheckForUpdatesConsult;
+
 
 /**
  * Created by msalcedo on 15/10/2017.
