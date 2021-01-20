@@ -1,4 +1,4 @@
-package common_tools;
+package py.martinsalcedo.android.common_tools;
 
 import android.app.Activity;
 import android.content.Context;
@@ -20,7 +20,7 @@ import com.google.firebase.components.BuildConfig;
 import java.util.Locale;
 
 import py.martinsalcedo.android.R;
-import web_services.CheckForUpdatesConsult;
+import py.martinsalcedo.android.web_services.CheckForUpdatesConsult;
 
 
 /**
@@ -165,7 +165,7 @@ public class GlobalTools {
     public static void checkForUpdates(Context context, RelativeLayout rlMainActivityLayout) {
         CheckForUpdatesConsult consult = new CheckForUpdatesConsult(context, rlMainActivityLayout, "CheckForUpdates");
         consult.setMethod("GET");
-        consult.addProperty("TOKEN", GlobalTools.getStringPreference(context, Constants.FIREBASE_TOKEN));
+        consult.addProperty("TOKEN", GlobalTools.getStringPreference(context, common_tools.Constants.FIREBASE_TOKEN));
         consult.addProperty("APPLICATION", BuildConfig.APPLICATION_ID);
         consult.addProperty("VERSION_CODE", String.valueOf(BuildConfig.VERSION_CODE));
         consult.addProperty("DEV_COUNTRY", Locale.getDefault().getCountry());

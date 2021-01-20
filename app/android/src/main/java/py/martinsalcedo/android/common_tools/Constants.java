@@ -1,4 +1,4 @@
-package common_tools;
+package py.martinsalcedo.android.common_tools;
 
 public class Constants {
     //WEB SERVICE

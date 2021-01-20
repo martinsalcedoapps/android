@@ -15,9 +15,9 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 
-import common_tools.Constants;
-import common_tools.UpdateAlertDialog;
 import py.martinsalcedo.android.R;
+import py.martinsalcedo.android.common_tools.Constants;
+import py.martinsalcedo.android.common_tools.UpdateAlertDialog;
 
 public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObject> {
     private static RelativeLayout curLayout;

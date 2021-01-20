@@ -1,4 +1,4 @@
-package common_tools;
+package py.martinsalcedo.android.common_tools;
 
 import android.app.Activity;
 import android.app.AlertDialog;
