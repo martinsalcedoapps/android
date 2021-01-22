@@ -28,7 +28,7 @@ public class SharedPreferences {
         editor.apply();
     }
 
-    static String getStringPreference(Context context, String key) {
+    public static String getStringPreference(Context context, String key) {
         final String appPackageName = context.getPackageName();
         android.content.SharedPreferences sharedPref = context.getSharedPreferences(appPackageName, Context.MODE_PRIVATE);
         return sharedPref.getString(key, "");
