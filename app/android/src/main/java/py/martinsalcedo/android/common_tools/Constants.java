@@ -12,12 +12,4 @@ public class Constants {
     // FIREBASE
     public static String FIREBASE_TOKEN = "FirebaseToken";
 
-    public static String getWebServiceHost() {
-        return WEB_SERVICE_HOST;
-    }
-
-    public static Integer getWebServicePort() {
-        return WEB_SERVICE_PORT;
-    }
-
 }

@@ -19,7 +19,7 @@ import java.util.Map;
 
 import py.martinsalcedo.android.R;
 import py.martinsalcedo.android.common_tools.Constants;
-import py.martinsalcedo.android.common_tools.GlobalTools;
+import py.martinsalcedo.android.common_tools.ErrorTools;
 
 class WebServiceTools {
     private String host;
@@ -29,7 +29,7 @@ class WebServiceTools {
     private HashMap<String, String> properties;
     private String[] parameters;
 
-    public WebServiceTools(String host, Integer port, String method, String service, String[] parameters, HashMap<String, String> properties) {
+    WebServiceTools(String host, Integer port, String method, String service, String[] parameters, HashMap<String, String> properties) {
         this.host = host;
         this.port = port;
         this.method = method;
@@ -65,7 +65,7 @@ class WebServiceTools {
         this.port = port;
     }
 
-    public String getMethod() {
+    private String getMethod() {
         return method;
     }
 
@@ -73,7 +73,7 @@ class WebServiceTools {
         this.method = method;
     }
 
-    public String getService() {
+    private String getService() {
         return service;
     }
 
@@ -81,7 +81,7 @@ class WebServiceTools {
         this.service = service;
     }
 
-    public String[] getParameters() {
+    private String[] getParameters() {
         return parameters;
     }
 
@@ -91,7 +91,7 @@ class WebServiceTools {
 
     //#################
 
-    public HashMap<String, String> getProperties() {
+    private HashMap<String, String> getProperties() {
         return properties;
     }
 
@@ -99,7 +99,7 @@ class WebServiceTools {
         this.properties = properties;
     }
 
-    public String performRequest() {
+    String performRequest() {
         String resString;
         int response;
         URL wsURL;
@@ -113,9 +113,6 @@ class WebServiceTools {
             } else {
                 resString = String.format("WSResponse:%s", response);
             }
-        } catch (IOException errString) {
-            resString = Constants.WEB_SERVICE_NOT_CONNECTED;
-            errString.printStackTrace();
         } catch (Exception errString) {
             resString = Constants.WEB_SERVICE_NOT_CONNECTED;
             errString.printStackTrace();
@@ -172,13 +169,13 @@ class WebServiceTools {
             return;
         }
         if (wsResult.has("ErrorCode")) {
-            String errorCode = null;
+            String errorCode;
             try {
                 errorCode = wsResult.getString("ErrorCode");
-                GlobalTools.displayErrorCode(context, context.getString(R.string.InternalError), errorCode);
+                ErrorTools.displayErrorCode(context, context.getString(R.string.InternalError), errorCode);
 //                Toast.makeText(context, context.getString(R.string.InternalError), Toast.LENGTH_LONG).show();
             } catch (JSONException e) {
-                GlobalTools.displayErrorDescription(context, context.getString(R.string.InternalError), e.toString());
+                ErrorTools.displayErrorDescription(context, context.getString(R.string.InternalError), e.toString());
                 e.printStackTrace();
             }
         } else {
@@ -193,7 +190,7 @@ class WebServiceTools {
                     e.printStackTrace();
                 }
             }
-            GlobalTools.displayErrorDescription(context, context.getString(R.string.InternalError), errorDescription);
+            ErrorTools.displayErrorDescription(context, context.getString(R.string.InternalError), errorDescription);
         }
     }
 }

@@ -18,7 +18,7 @@ public class UpdateAlertDialog {
         dialog.setPositiveButton(activity.getString(R.string.UpdateNow), new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                GlobalTools tools = new GlobalTools();
+                PlayStoreTools tools = new PlayStoreTools();
                 tools.goToPlayStore(view);
             }
         });

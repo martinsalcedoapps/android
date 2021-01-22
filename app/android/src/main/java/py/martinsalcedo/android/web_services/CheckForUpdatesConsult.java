@@ -33,13 +33,13 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
     private HashMap<String, String> properties = new HashMap<>();
     private String[] parameters = new String[]{};
 
-    public CheckForUpdatesConsult(Context curContext, RelativeLayout curLayout, String curService) {
+    public CheckForUpdatesConsult(Context curContext, RelativeLayout curLayout, String host, Integer port, String curService) {
         CheckForUpdatesConsult.curLayout = curLayout;
         CheckForUpdatesConsult.curContext = curContext;
         this.method = Constants.WEB_SERVICE_GET;
         this.service = curService;
-        this.host = Constants.getWebServiceHost();
-        this.port = Constants.getWebServicePort();
+        this.host = host;
+        this.port = port;
     }
 
     //##################################

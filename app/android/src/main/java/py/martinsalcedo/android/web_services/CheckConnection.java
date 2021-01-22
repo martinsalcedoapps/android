@@ -30,13 +30,13 @@ public class CheckConnection extends AsyncTask<String, Integer, JSONObject> {
     private HashMap<String, String> properties = new HashMap<>();
     private String[] parameters = new String[]{};
 
-    public CheckConnection(Context curContext, RelativeLayout curLayout, String curService) {
+    public CheckConnection(Context curContext, RelativeLayout curLayout, String host, Integer port, String curService) {
         CheckConnection.curLayout = curLayout;
         CheckConnection.curContext = curContext;
         this.method = Constants.WEB_SERVICE_GET;
         this.service = curService;
-        this.host = Constants.getWebServiceHost();
-        this.port = Constants.getWebServicePort();
+        this.host = host;
+        this.port = port;
     }
 
     //##################################
