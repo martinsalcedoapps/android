@@ -7,7 +7,7 @@ import android.view.View;
 
 public class PlayStoreTools {
 
-    void goToPlayStore(View view) {
+    public void goToPlayStore(View view) {
         Context context = view.getContext().getApplicationContext();
         final String appPackageName = context.getPackageName(); // getPackageName() from Context or Activity object
         try {
