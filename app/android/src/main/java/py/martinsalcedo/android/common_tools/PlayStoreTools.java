@@ -5,7 +5,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.view.View;
 
-class PlayStoreTools {
+public class PlayStoreTools {
 
     void goToPlayStore(View view) {
         Context context = view.getContext().getApplicationContext();
