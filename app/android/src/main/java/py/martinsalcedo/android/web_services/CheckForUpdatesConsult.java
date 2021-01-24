@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 
-import com.google.firebase.components.BuildConfig;
-
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -28,14 +26,16 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
 
     private String host;
     private Integer port;
+    private Integer thisVersion;
     private String method;
     private String service;
     private HashMap<String, String> properties = new HashMap<>();
     private String[] parameters = new String[]{};
 
-    public CheckForUpdatesConsult(Context curContext, RelativeLayout curLayout, String host, Integer port, String curService) {
+    public CheckForUpdatesConsult(Context curContext, RelativeLayout curLayout, String host, Integer port, String thisVersion, String curService) {
         CheckForUpdatesConsult.curLayout = curLayout;
         CheckForUpdatesConsult.curContext = curContext;
+        this.thisVersion = Integer.parseInt(String.valueOf(thisVersion));
         this.method = LibraryConstants.WEB_SERVICE_GET;
         this.service = curService;
         this.host = host;
@@ -173,10 +173,9 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
                 if (wsObject != null) {
                     if (wsObject.has("CurrentAppVersion")) {
                         Integer curVersion = Integer.parseInt(wsObject.getString("CurrentAppVersion"));
-                        Integer thisVersion = Integer.parseInt(String.valueOf(BuildConfig.VERSION_CODE));
                         if (curVersion != -1 && thisVersion < curVersion) {
                             hasError = false;
-                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout(),String.valueOf(curVersion), String.valueOf(thisVersion) ).show();
+                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout(), String.valueOf(curVersion), String.valueOf(thisVersion)).show();
                         } else {
 //                            Toast.makeText(getCurContext(), "Application Version " + String.valueOf(curVersion), Toast.LENGTH_LONG).show();
                         }
