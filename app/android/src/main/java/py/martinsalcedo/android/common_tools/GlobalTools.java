@@ -3,6 +3,7 @@ package py.martinsalcedo.android.common_tools;
 import android.content.Context;
 import android.widget.RelativeLayout;
 
+import java.text.DecimalFormat;
 import java.util.Locale;
 
 import py.martinsalcedo.android.web_services.CheckForUpdatesConsult;
@@ -23,5 +24,22 @@ public class GlobalTools {
         consult.addProperty("DEV_COUNTRY", Locale.getDefault().getCountry());
         consult.execute();
     }
+
+    public static String formatValue(Context context, Double value, Integer precision) {
+        StringBuilder amountPattern = new StringBuilder("###,##0");
+        if (precision > 0) {
+            amountPattern.append(".");
+        }
+        for (int i = 0; i < precision; i++) {
+            amountPattern.append("0");
+        }
+        if (value == null) {
+            value = 0d;
+        }
+        DecimalFormat amountFormat = new DecimalFormat(amountPattern.toString());
+        String totalAmountStr = amountFormat.format(value);
+        return totalAmountStr;
+    }
+
 
 }
