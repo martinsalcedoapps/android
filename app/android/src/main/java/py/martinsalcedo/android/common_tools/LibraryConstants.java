@@ -1,6 +1,6 @@
 package py.martinsalcedo.android.common_tools;
 
-public class Constants {
+public class LibraryConstants {
     //WEB SERVICE
     public static final String WEB_SERVICE_NOT_CONNECTED = "Not Connected";
     public static final String WEB_SERVICE_GET = "GET";

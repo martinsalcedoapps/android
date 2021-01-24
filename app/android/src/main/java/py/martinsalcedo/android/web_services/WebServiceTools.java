@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import py.martinsalcedo.android.R;
-import py.martinsalcedo.android.common_tools.Constants;
+import py.martinsalcedo.android.common_tools.LibraryConstants;
 import py.martinsalcedo.android.common_tools.ErrorTools;
 
 class WebServiceTools {
@@ -45,7 +45,7 @@ class WebServiceTools {
         if (rString.isEmpty()) {
             return false;
         }
-        return !rString.equals(Constants.WEB_SERVICE_NOT_CONNECTED);
+        return !rString.equals(LibraryConstants.WEB_SERVICE_NOT_CONNECTED);
     }
 
     //SETTER AND GETTER
@@ -114,7 +114,7 @@ class WebServiceTools {
                 resString = String.format("WSResponse:%s", response);
             }
         } catch (Exception errString) {
-            resString = Constants.WEB_SERVICE_NOT_CONNECTED;
+            resString = LibraryConstants.WEB_SERVICE_NOT_CONNECTED;
             errString.printStackTrace();
         }
         return resString;

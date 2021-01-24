@@ -16,7 +16,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import py.martinsalcedo.android.R;
-import py.martinsalcedo.android.common_tools.Constants;
+import py.martinsalcedo.android.common_tools.LibraryConstants;
 import py.martinsalcedo.android.common_tools.UpdateAlertDialog;
 
 public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObject> {
@@ -36,7 +36,7 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
     public CheckForUpdatesConsult(Context curContext, RelativeLayout curLayout, String host, Integer port, String curService) {
         CheckForUpdatesConsult.curLayout = curLayout;
         CheckForUpdatesConsult.curContext = curContext;
-        this.method = Constants.WEB_SERVICE_GET;
+        this.method = LibraryConstants.WEB_SERVICE_GET;
         this.service = curService;
         this.host = host;
         this.port = port;

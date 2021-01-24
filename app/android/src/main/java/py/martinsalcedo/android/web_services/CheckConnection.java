@@ -13,7 +13,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 
 import py.martinsalcedo.android.R;
-import py.martinsalcedo.android.common_tools.Constants;
+import py.martinsalcedo.android.common_tools.LibraryConstants;
 
 
 public class CheckConnection extends AsyncTask<String, Integer, JSONObject> {
@@ -33,7 +33,7 @@ public class CheckConnection extends AsyncTask<String, Integer, JSONObject> {
     public CheckConnection(Context curContext, RelativeLayout curLayout, String host, Integer port, String curService) {
         CheckConnection.curLayout = curLayout;
         CheckConnection.curContext = curContext;
-        this.method = Constants.WEB_SERVICE_GET;
+        this.method = LibraryConstants.WEB_SERVICE_GET;
         this.service = curService;
         this.host = host;
         this.port = port;

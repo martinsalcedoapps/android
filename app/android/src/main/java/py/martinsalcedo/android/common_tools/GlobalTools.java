@@ -17,11 +17,11 @@ import py.martinsalcedo.android.web_services.CheckForUpdatesConsult;
 
 public class GlobalTools {
 
-    public static void checkForUpdates(Context context, RelativeLayout rlMainActivityLayout, String host, Integer port) {
+    public static void checkForUpdates(Context context, RelativeLayout rlMainActivityLayout, String application_id, String host, Integer port) {
         CheckForUpdatesConsult consult = new CheckForUpdatesConsult(context, rlMainActivityLayout, host, port, "CheckForUpdates");
         consult.setMethod("GET");
-        consult.addProperty("TOKEN", SharedPreferences.getStringPreference(context, Constants.FIREBASE_TOKEN));
-        consult.addProperty("APPLICATION", BuildConfig.APPLICATION_ID);
+        consult.addProperty("TOKEN", SharedPreferences.getStringPreference(context, LibraryConstants.FIREBASE_TOKEN));
+        consult.addProperty("APPLICATION", application_id);
         consult.addProperty("VERSION_CODE", String.valueOf(BuildConfig.VERSION_CODE));
         consult.addProperty("DEV_COUNTRY", Locale.getDefault().getCountry());
         consult.execute();

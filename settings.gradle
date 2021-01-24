@@ -1,3 +1,3 @@
-rootProject.name='AndroidLibrary'
+rootProject.name='Android'
 include ':app'
 include ':app:android'
