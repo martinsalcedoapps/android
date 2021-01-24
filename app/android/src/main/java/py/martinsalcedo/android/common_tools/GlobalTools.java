@@ -3,12 +3,9 @@ package py.martinsalcedo.android.common_tools;
 import android.content.Context;
 import android.widget.RelativeLayout;
 
-import com.google.firebase.components.BuildConfig;
-
 import java.util.Locale;
 
 import py.martinsalcedo.android.web_services.CheckForUpdatesConsult;
-
 
 /**
  * Created by msalcedo on 15/10/2017.

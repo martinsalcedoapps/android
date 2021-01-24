@@ -177,7 +177,7 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
                         if (curVersion != -1 && thisVersion < curVersion) {
                             hasError = false;
 //                            Toast.makeText(getCurContext(), "New Application Update", Toast.LENGTH_LONG).show();
-                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout()).show();
+                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout(),String.valueOf(thisVersion), String.valueOf(curVersion)).show();
                         } else {
 //                            Toast.makeText(getCurContext(), "Application Version " + String.valueOf(curVersion), Toast.LENGTH_LONG).show();
                         }
