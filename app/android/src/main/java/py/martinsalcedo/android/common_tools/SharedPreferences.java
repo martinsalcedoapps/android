@@ -17,10 +17,10 @@ public class SharedPreferences {
         editor.apply();
     }
 
-    public static Integer getIntPreference(Context context, String key) {
+    public static Integer getIntPreference(Context context, String key, Integer def_decimals) {
         final String appPackageName = context.getPackageName();
         android.content.SharedPreferences sharedPref = context.getSharedPreferences(appPackageName, Context.MODE_PRIVATE);
-        return sharedPref.getInt(key, -1);
+        return sharedPref.getInt(key, def_decimals);
 
     }
 
