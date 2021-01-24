@@ -172,12 +172,11 @@ public class CheckForUpdatesConsult extends AsyncTask<String, Integer, JSONObjec
                 JSONObject wsObject = wsResult.getJSONObject("Object");
                 if (wsObject != null) {
                     if (wsObject.has("CurrentAppVersion")) {
-                        int curVersion = Integer.parseInt(wsObject.getString("CurrentAppVersion"));
-                        int thisVersion = BuildConfig.VERSION_CODE;
+                        Integer curVersion = Integer.parseInt(wsObject.getString("CurrentAppVersion"));
+                        Integer thisVersion = Integer.parseInt(String.valueOf(BuildConfig.VERSION_CODE));
                         if (curVersion != -1 && thisVersion < curVersion) {
                             hasError = false;
-//                            Toast.makeText(getCurContext(), "New Application Update", Toast.LENGTH_LONG).show();
-                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout(),String.valueOf(thisVersion), String.valueOf(curVersion)).show();
+                            UpdateAlertDialog.updateConfirmation((Activity) getCurContext(), getCurLayout(),String.valueOf(curVersion), String.valueOf(thisVersion) ).show();
                         } else {
 //                            Toast.makeText(getCurContext(), "Application Version " + String.valueOf(curVersion), Toast.LENGTH_LONG).show();
                         }
