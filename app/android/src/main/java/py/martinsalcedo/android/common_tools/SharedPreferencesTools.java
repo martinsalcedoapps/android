@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 
-public class SharedPreferences {
+public class SharedPreferencesTools {
 
     //###############	SHARED PREFERENCES ##########
     public static void setIntPreference(Context context, String key, Integer value) {

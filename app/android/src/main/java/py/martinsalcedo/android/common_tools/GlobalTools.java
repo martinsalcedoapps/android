@@ -18,7 +18,7 @@ public class GlobalTools {
     public static void checkForUpdates(Context context, RelativeLayout rlMainActivityLayout, String application_id, String thisVersion, String host, Integer port) {
         CheckForUpdatesConsult consult = new CheckForUpdatesConsult(context, rlMainActivityLayout, host, port, thisVersion,"CheckForUpdates");
         consult.setMethod("GET");
-        consult.addProperty("TOKEN", SharedPreferences.getStringPreference(context, LibraryConstants.FIREBASE_TOKEN));
+        consult.addProperty("TOKEN", SharedPreferencesTools.getStringPreference(context, LibraryConstants.FIREBASE_TOKEN));
         consult.addProperty("APPLICATION", application_id);
         consult.addProperty("VERSION_CODE", thisVersion);
         consult.addProperty("DEV_COUNTRY", Locale.getDefault().getCountry());
