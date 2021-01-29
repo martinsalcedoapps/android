@@ -1,6 +1,7 @@
 package py.martinsalcedo.android.common_tools;
 
 import android.content.Context;
+import android.content.Intent;
 import android.widget.RelativeLayout;
 
 import java.text.DecimalFormat;
@@ -40,6 +41,17 @@ public class GlobalTools {
         String totalAmountStr = amountFormat.format(value);
         return totalAmountStr;
     }
+
+    public static void shareApplication(Context context) {
+        final String appPackageName = context.getPackageName(); // getPackageName() from Context or Activity object
+        String stringShare = "https://play.google.com/store/apps/details?id=" + appPackageName;
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, stringShare);
+        sendIntent.setType("text/plain");
+        context.startActivity(sendIntent);
+    }
+
 
 
 }
