@@ -21,7 +21,7 @@ import py.martinsalcedo.android.R;
 import py.martinsalcedo.android.common_tools.LibraryConstants;
 import py.martinsalcedo.android.common_tools.ErrorTools;
 
-class WebServiceTools {
+public class WebServiceTools {
     private String host;
     private Integer port;
     private String method;
