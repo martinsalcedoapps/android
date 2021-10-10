@@ -38,7 +38,7 @@ public class WebServiceTools {
         this.properties = properties;
     }
 
-    public Boolean isValidResponse(String rString) {
+    public static Boolean isValidResponse(String rString) {
         if (rString == null) {
             return false;
         }
