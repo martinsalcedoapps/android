@@ -57,4 +57,12 @@ public class SharedPreferencesTools {
         return sharedPref.getStringSet(key, new HashSet<String>(0));
     }
 
+    public static void removePreference(Context context, String key) {
+        final String appPackageName = context.getPackageName();
+        android.content.SharedPreferences sharedPref = context.getSharedPreferences(appPackageName, Context.MODE_PRIVATE);
+        android.content.SharedPreferences.Editor editor = sharedPref.edit();
+        editor.remove(key);
+        editor.apply();
+    }
+
 }
