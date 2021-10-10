@@ -29,7 +29,7 @@ public class WebServiceTools {
     private HashMap<String, String> properties;
     private String[] parameters;
 
-    WebServiceTools(String host, Integer port, String method, String service, String[] parameters, HashMap<String, String> properties) {
+    public WebServiceTools(String host, Integer port, String method, String service, String[] parameters, HashMap<String, String> properties) {
         this.host = host;
         this.port = port;
         this.method = method;
@@ -99,7 +99,7 @@ public class WebServiceTools {
         this.properties = properties;
     }
 
-    String performRequest() {
+    public String performRequest() {
         String resString;
         int response;
         URL wsURL;
